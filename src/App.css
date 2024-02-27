@@ -1,3 +1,46 @@
+@font-face {
+  font-family: 'Avenir Black';
+  src: url('../public/fonts/AvenirBlack.ttf') format('truetype');
+}
 body {
+  font-family: 'Avenir Black';
+  letter-spacing: 0.8px;
   margin: 0;
+}
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+  background-color: #1f3864;
+  color: #fefce6;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  a {
+    text-decoration: none;
+    color: #fefce6;
+  }
+}
+.navbar-othersdiv {
+  display: inline-flex;
+
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 0;
+  a {
+    margin: 0 10px;
+    padding: 0 25px;
+  }
+}
+.navbar-logodiv {
+  display: inline-flex;
+  align-content: center;
+  margin: 0;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
 }
