@@ -1,28 +1,12 @@
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Zone from './Zone'
-const Home = () => {
-  const themeParkData = [
-    {
-      parkName: 'FantasyLand',
-      attractions: [
-        { id: 'attraction1', x: 100, y: 150, color: 'blue' },
-        { id: 'attraction2', x: 300, y: 250, color: 'green' }
-      ]
-    },
-    {
-      parkName: 'AdventureLand',
-      attractions: [
-        { id: 'attraction1', x: 200, y: 180, color: 'red' },
-        { id: 'attraction2', x: 400, y: 280, color: 'orange' }
-      ]
-    }
-  ]
+const Home = ({ themeParkData }) => {
   return (
     <div>
       <div className="zonemap-main-div">
         <div className="zonemap-image-div">
           <div className="zonemap-imagecontainer-div">
-            <img src="/images/zonesMap.svg" alt="try image" />
+            <img src="/images/zonesMap.svg" alt="Map of all parks" />
           </div>
         </div>
         <div className="zonemap-information-div">
@@ -35,32 +19,24 @@ const Home = () => {
             consequat. Duis autem vel eum iriure dolor in hendrerit in
           </p>
           <ul className="homepage-zone-ul">
-            <li className="homepage-zone-li">
-              <NavLink to="zone/waterZone" className="zone1">
-                Water Zone
-              </NavLink>
-            </li>
-            <li className="homepage-zone-li">
-              <NavLink to="zone/kidsZone" className="zone2">
-                Kids Zone
-              </NavLink>
-            </li>
-            <li className="homepage-zone-li">
-              <NavLink to="zone/castleZone" className="zone3">
-                Castle Zone
-              </NavLink>
-            </li>
-            <li className="homepage-zone-li">
-              <NavLink to="zone/beachZone" className="zone4">
-                Beach Zone
-              </NavLink>
-            </li>
+            <div>
+              {themeParkData.map((themePark) => (
+                <li className="homepage-zone-li" key={themePark.mapId}>
+                  <Link
+                    to={{
+                      pathname: `zone/${themePark.mapId}`,
+                      state: themePark
+                    }}
+                  >
+                    {themePark.mapName}
+                  </Link>
+                </li>
+              ))}
+              {/* <Zone key={themePark.mapName} {...themePark} /></div> */}
+            </div>
           </ul>
         </div>
       </div>
-      {themeParkData.map((themePark) => (
-        <Zone key={themePark.mapName} {...themePark} />
-      ))}
     </div>
   )
 }
