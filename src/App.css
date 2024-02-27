@@ -10,7 +10,7 @@ body {
 .navbar {
   list-style-type: none;
   margin: 0;
-  padding: 20px;
+  padding: 20px 0;
   overflow: hidden;
   background-color: #1f3864;
   color: #fefce6;
@@ -31,40 +31,48 @@ body {
   margin: 0;
   a {
     margin: 0 10px;
-    padding: 0 25px;
   }
 }
 .navbar-logodiv {
   display: inline-flex;
   align-content: center;
   margin: 0;
+  padding: 0 0 0 20px;
 
   p {
     margin: 0;
-    padding: 0;
   }
 }
 
-.zonemap-main-div {
+.zonemap-main-div,
+.zoneattractions-main-div {
   display: flex;
   justify-content: space-between;
 }
-.zonemap-imagecontainer-div {
+.zonemap-imagecontainer-div,
+.zoneattractions-imagecontainer-div {
   margin: 0;
   width: 675px;
 }
-.zonemap-information-div {
+.zonemap-information-div,
+.zoneAttractions-information-div {
   padding: 30px;
   color: #1f3864;
 }
-
+.zonepage-attractions-ul {
+  color: #1d262d;
+  a {
+    text-decoration: none;
+    color: #1d262d;
+  }
+}
 .homepage-zone-ul {
   display: grid;
   grid-template-areas: 'zone1 zone2' 'zone3 zone4';
-  color: #3d5786;
+  color: #1d262d;
   a {
     text-decoration: none;
-    color: #3d5786;
+    color: #1d262d;
   }
 }
 .zone1 {
