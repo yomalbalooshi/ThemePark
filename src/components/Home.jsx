@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Zone from './Zone'
+import ZonesSvg from './ZonesSvg'
 const Home = ({ themeParkData }) => {
   return (
     <div>
@@ -8,6 +9,7 @@ const Home = ({ themeParkData }) => {
           <div className="zonemap-imagecontainer-div">
             <img src="/images/zonesMap.svg" alt="Map of all parks" />
           </div>
+          <ZonesSvg zones={themeParkData} />
         </div>
         <div className="zonemap-information-div">
           <h2 className="zonemap-information-title">Explore Our Zones</h2>
@@ -22,17 +24,11 @@ const Home = ({ themeParkData }) => {
             <div>
               {themeParkData.map((themePark) => (
                 <li className="homepage-zone-li" key={themePark.mapId}>
-                  <Link
-                    to={{
-                      pathname: `zone/${themePark.mapId}`,
-                      state: themePark
-                    }}
-                  >
+                  <Link to={`zone/${themePark.mapId}`}>
                     {themePark.mapName}
                   </Link>
                 </li>
               ))}
-              {/* <Zone key={themePark.mapName} {...themePark} /></div> */}
             </div>
           </ul>
         </div>
