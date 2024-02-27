@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <circle id="attraction1" cx="100" cy="150" r="10" fill="blue" />
+  <circle id="attraction2" cx="300" cy="250" r="10" fill="green" />
+    <circle id="attraction3" cx="350" cy="100" r="10" fill="red" />
+    <circle id="attraction4" cx="30" cy="200" r="10" fill="orange" />
+    <circle id="attraction5" cx="360" cy="500" r="10" fill="purple" />
+    <circle id="attraction6" cx="500" cy="450" r="10" fill="black" />
+
+</svg>
