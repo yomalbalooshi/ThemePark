@@ -44,3 +44,38 @@ body {
     padding: 0;
   }
 }
+
+.zonemap-main-div {
+  display: flex;
+  justify-content: space-between;
+}
+.zonemap-imagecontainer-div {
+  margin: 0;
+  width: 675px;
+}
+.zonemap-information-div {
+  padding: 30px;
+  color: #1f3864;
+}
+
+.homepage-zone-ul {
+  display: grid;
+  grid-template-areas: 'zone1 zone2' 'zone3 zone4';
+  color: #3d5786;
+  a {
+    text-decoration: none;
+    color: #3d5786;
+  }
+}
+.zone1 {
+  grid-area: zone1;
+}
+.zone2 {
+  grid-area: zone2;
+}
+.zone3 {
+  grid-area: zone4;
+}
+.zone4 {
+  grid-area: zone3;
+}
