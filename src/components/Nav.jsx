@@ -8,7 +8,7 @@ const Nav = () => {
       </div>
       <div className="navbar-othersdiv">
         <NavLink to="events">Events</NavLink>
-        <NavLink to="events">Sign In</NavLink>
+        <NavLink to="/login">Login</NavLink>
       </div>
     </nav>
   )
