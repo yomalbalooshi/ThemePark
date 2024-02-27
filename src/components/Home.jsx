@@ -22,7 +22,7 @@ const Home = () => {
       {/* SVG FILE IMPORTING LINE */}
       <img src="/images/1.svg" alt="try image" width="1200px" height="400px" />
       {themeParkData.map((themePark) => (
-        <Zone key={themePark.mapName} {...themePark} />
+        <Zone key={themePark.parkName} {...themePark} />
       ))}
     </div>
   )
