@@ -26,15 +26,6 @@ const eventsArray = [
       'Indulge your sweet tooth and embrace the delicious excitement of our Cake Eating Contest, taking place on the 1st of February 2024 within the lively atmosphere of a theme park. This delectable event invites participants to savor the moment and compete in a friendly yet fiercely appetizing competition. Whether you are a devoted dessert enthusiast or just looking for a fun and tasty challenge, the Cake Eating Contest promises a delightful experience. Join us in the theme park zone, where laughter and camaraderie blend with the irresistible aroma of freshly baked treats. Mark your calendar for a day filled with sugary delights, friendly competition, and the sheer joy of celebrating the love for all things cake. Do not miss this opportunity to relish in a delightful gastronomic adventure with fellow dessert enthusiasts!',
     date: '01/02/2024',
     zone: 'theme park'
-  },
-  {
-    id: 4,
-    name: 'meet cherry',
-    image: 'imageurl',
-    description:
-      'Embark on a heartwarming adventure as you get the chance to "Meet Cherry," the delightful red panda, and indulge in an unforgettable experience at the zoo on the 23rd of January 2024. This unique event offers the opportunity to connect with Cherry on a personal level, allowing participants to feed her some of her favorite treats. Immerse yourself in the charming ambiance of the zoo as you interact with this adorable red panda, creating lasting memories in a setting that celebrates the beauty of wildlife. Join us for a day filled with joy, discovery, and the rare opportunity to forge a connection with the enchanting Cherry in her natural habitat within the zoo zone. Do not miss out on this special occasion to encounter the magic of wildlife and share delightful moments with one of natures most endearing creatures.',
-    date: '23/01/2024',
-    zone: 'zoo'
   }
 ]
-export default attractionsArray
+export default eventsArray
