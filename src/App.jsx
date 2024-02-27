@@ -8,49 +8,9 @@ import Events from './components/Events'
 import Login from './components/Login'
 import Register from './components/Register'
 import eventsArray from './data/events'
+import AttractionDetails from './components/AttractionDetails'
+import themeParkData from './data/themeParkData'
 const App = () => {
-  const themeParkData = [
-    {
-      mapId: 11,
-      mapName: 'Water Zone',
-      attractions: [
-        { id: 'attraction1', x: 100, y: 150, color: 'blue' },
-        { id: 'attraction2', x: 300, y: 250, color: 'green' }
-      ],
-      description:
-        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.'
-    },
-    {
-      mapId: 22,
-      mapName: 'Kids Zone',
-      attractions: [
-        { id: 'attraction1', x: 200, y: 180, color: 'red' },
-        { id: 'attraction2', x: 400, y: 280, color: 'orange' }
-      ],
-      description:
-        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.'
-    },
-    {
-      mapId: 33,
-      mapName: 'Castle Zone',
-      attractions: [
-        { id: 'attraction1', x: 200, y: 180, color: 'red' },
-        { id: 'attraction2', x: 400, y: 280, color: 'orange' }
-      ],
-      description:
-        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.'
-    },
-    {
-      mapId: 44,
-      mapName: 'Beach Zone',
-      attractions: [
-        { id: 'attraction1', x: 200, y: 180, color: 'red' },
-        { id: 'attraction2', x: 400, y: 280, color: 'orange' }
-      ],
-      description:
-        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.'
-    }
-  ]
   const [events, setEvents] = useState(eventsArray)
 
   return (
@@ -65,6 +25,10 @@ const App = () => {
           <Route
             path="/zone/:mapId"
             element={<Zone themeParkData={themeParkData} />}
+          />
+          <Route
+            path="/attractions/:attractionId"
+            element={<AttractionDetails />}
           />
         </Routes>
       </main>

@@ -49,11 +49,23 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.zonemap-imagecontainer-div,
 .zoneattractions-imagecontainer-div {
   margin: 0;
   width: 675px;
 }
+.zonemap-imagecontainer-div {
+  margin: 0;
+  width: 800px;
+}
+
+.zoneattractions-imagecontainer-div {
+  margin: 0;
+  width: 675px;
+  img {
+    width: 650px;
+  }
+}
+
 .zonemap-information-div,
 .zoneAttractions-information-div {
   padding: 30px;
@@ -86,4 +98,23 @@ body {
 }
 .zone4 {
   grid-area: zone3;
+}
+
+.zone-map {
+  z-index: 0;
+}
+
+.theme-park-svg-container {
+  position: absolute;
+  top: 65.5px;
+  width: 650px;
+  height: 688px;
+  z-index: 2;
+}
+.theme-park-svg circle {
+  transition: fill 0.3s ease;
+}
+
+.theme-park-svg circle:hover {
+  fill: rgba(255, 255, 255, 0.3);
 }
