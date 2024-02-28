@@ -1,28 +1,29 @@
 import { NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { CheckSession } from '../services/auth'
-const Nav = ({ token }) => {
-  const [user, setUser] = useState(null)
+const Nav = ({ user }) => {
+  const userLinks = (
+    <div className="navbar-othersdiv">
+      <NavLink to="events">Events</NavLink>
+      <NavLink to="/ticket">Buy Ticket</NavLink>
+      <NavLink to="/profile">Profile</NavLink>
+      <NavLink to="/logout">Logout</NavLink>
+    </div>
+  )
 
-  useEffect(() => {
-    if (token) {
-      const checkToken = async () => {
-        setUser(await CheckSession())
-      }
-      checkToken()
-    }
-  }, [token])
+  const links = (
+    <div className="navbar-othersdiv">
+      <NavLink to="events">Events</NavLink>
+      <NavLink to="/login">Login</NavLink>
+    </div>
+  )
 
   return (
     <nav className="navbar">
       <div className="navbar-logodiv">
         <NavLink to="/">YTE LAND</NavLink>
       </div>
-      <div className="navbar-othersdiv">
-        <NavLink to="events">Events</NavLink>
-        {user ? <NavLink to="/ticket">Buy Ticket</NavLink> : ''}
-        <NavLink to="/login">Login</NavLink>
-      </div>
+      {user ? userLinks : links}
     </nav>
   )
 }
