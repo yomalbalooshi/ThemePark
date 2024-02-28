@@ -16,19 +16,18 @@ const Home = ({ themeParkData }) => {
         <div className="zonemap-information-div">
           <h2 className="zonemap-information-title">Explore Our Zones</h2>
           <p className="zonemap-information-paragraph">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-            consequat. Duis autem vel eum iriure dolor in hendrerit in
+            Welcome to our diverse theme park! Dive into the water wonders of
+            Splash Kingdom, enjoy whimsical adventures in Kidtopia, explore the
+            enchanting Kingdom of Dreams, and relax in the tropical paradise of
+            Tropical Tides. From thrilling rides to magical landscapes, our park
+            offers a memorable experience for all ages, where imagination comes
+            to life.
           </p>
           <ul className="homepage-zone-ul">
             <div>
               {themeParkData.map((themePark) => (
-                <li className="homepage-zone-li" key={themePark.mapId}>
-                  <Link to={`zone/${themePark.mapId}`}>
-                    {themePark.mapName}
-                  </Link>
+                <li className="homepage-zone-li" key={themePark._id}>
+                  <Link to={`zone/${themePark._id}`}>{themePark.name}</Link>
                 </li>
               ))}
             </div>

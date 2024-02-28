@@ -8,15 +8,15 @@ const Zone = ({ themeParkData }) => {
     navigate('/')
   }
   const [themeParkDetails, setThemeParkDetails] = useState({})
-  let { mapId } = useParams()
+  let { _id } = useParams()
   useEffect(() => {
-    let selectedPark = themeParkData.find((park) => park.mapId == mapId)
+    let selectedPark = themeParkData.find((park) => park._id == _id)
     if (selectedPark) {
       setThemeParkDetails(selectedPark)
     } else {
       setThemeParkDetails({})
     }
-  }, [mapId, themeParkData])
+  }, [_id, themeParkData])
   return themeParkDetails ? (
     <div className="zoneattractions-main-div">
       <div className="zoneattractions-image-div">
@@ -32,16 +32,18 @@ const Zone = ({ themeParkData }) => {
       </div>
       <div className="zoneAttractions-information-div">
         <h2 className="zoneAttractions-information-title">
-          {themeParkDetails.mapName}
+          {themeParkDetails.name}
         </h2>
         <p className="zoneAttractions-information-paragraph">
           {themeParkDetails.description}
         </p>
+        <p>opening time: {themeParkDetails.openingTime}</p>
+        <p>closing time: {themeParkDetails.closingTime}</p>
         <div>
           {themeParkDetails && themeParkDetails.attractions && (
             <ul className="zonepage-attractions-ul">
               {themeParkDetails.attractions.map((attraction) => (
-                <li key={attraction.id}>{attraction.name}</li>
+                <li key={attraction._id}>{attraction.name}</li>
               ))}
             </ul>
           )}

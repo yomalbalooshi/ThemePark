@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { LoginUser } from '../services/auth'
-const Login = () => {
+const Login = ({ setUser }) => {
   let navigate = useNavigate()
   const initialState = {
     email: '',
@@ -16,11 +16,12 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await LoginUser({
+    const payload = await LoginUser({
       email: formValues.email,
-      password: formValues.password
+      password: formValues.password,
+      name: formValues.name
     })
-
+    setUser(payload)
     setFormValues(initialState)
 
     navigate('/')
@@ -43,11 +44,11 @@ const Login = () => {
           onChange={handleChange}
           required
         />
-       <div class="button-container">
-        <button type="submit">Login</button>
-        <Link to="/register">
-          <button type="button">Register</button>
-        </Link>
+        <div className="button-container">
+          <button type="submit">Login</button>
+          <Link to="/register">
+            <button type="button">Register</button>
+          </Link>
         </div>
       </form>
     </section>

@@ -7,18 +7,25 @@ import Nav from './components/Nav'
 import Events from './components/Events'
 import Login from './components/Login'
 import Register from './components/Register'
-import eventsArray from './data/events'
 import AttractionDetails from './components/AttractionDetails'
-import themeParkData from './data/themeParkData'
 import BuyTicket from './components/BuyTicket'
 import { getZones } from './services/zones'
 import Profile from './components/Profile'
 
 const App = () => {
-  const [events, setEvents] = useState(eventsArray)
+  const [token, setToken] = useState('')
+  const [user, setUser] = useState(null)
   const [zones, setZones] = useState([])
 
   useEffect(() => {
+    setToken(localStorage.getItem('token'))
+    if (token) {
+      const checkToken = async () => {
+        setUser(await CheckSession())
+      }
+      checkToken()
+    }
+
     const allZones = async () => {
       let data = await getZones()
       setZones(data)
@@ -28,17 +35,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <header>{<Nav />}</header>
+      <header>{<Nav user={user} />}</header>
       <main>
         <Routes>
-          <Route path="/" element={<Home themeParkData={themeParkData} />} />
-          <Route path="events" element={<Events events={events} />} />
-          <Route path="/login" element={<Login />} />
+          {zones && <Route path="/" element={<Home themeParkData={zones} />} />}
+          <Route path="events" element={<Events />} />
+          <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
-          <Route
-            path="/zone/:mapId"
-            element={<Zone themeParkData={themeParkData} />}
-          />
+          <Route path="/zone/:_id" element={<Zone themeParkData={zones} />} />
           <Route path="/ticket" element={<BuyTicket zones={zones} />} />
           <Route
             path="/attractions/:attractionId"
