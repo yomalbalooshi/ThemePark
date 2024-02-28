@@ -13,6 +13,7 @@ const BuyTicket = ({ zones }) => {
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.id]: e.target.value })
   }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     await CreateTicket({
