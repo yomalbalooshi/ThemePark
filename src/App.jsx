@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Home from './components/Home'
 import Zone from './components/Zone'
@@ -10,8 +10,20 @@ import Register from './components/Register'
 import eventsArray from './data/events'
 import AttractionDetails from './components/AttractionDetails'
 import themeParkData from './data/themeParkData'
+import BuyTicket from './components/BuyTicket'
+import { getZones } from './services/zones'
+
 const App = () => {
   const [events, setEvents] = useState(eventsArray)
+  let [zones, setZones] = useState({})
+
+  const allZones = async () => {
+    setZones(await getZones())
+  }
+
+  useEffect(() => {
+    allZones()
+  }, [])
 
   return (
     <div className="App">
@@ -26,6 +38,7 @@ const App = () => {
             path="/zone/:mapId"
             element={<Zone themeParkData={themeParkData} />}
           />
+          <Route path="/ticket" element={<BuyTicket zones={zones} />} />
           <Route
             path="/attractions/:attractionId"
             element={<AttractionDetails />}
