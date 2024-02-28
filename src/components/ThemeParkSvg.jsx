@@ -1,20 +1,35 @@
-const ThemeParkSvg = ({ attractions, onClick }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 800 600"
-    style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }}
-  >
-    {attractions.map((attraction) => (
-      <circle
-        key={attraction.id}
-        id={attraction.id}
-        cx={attraction.x}
-        cy={attraction.y}
-        r="10"
-        fill={attraction.color}
-        onClick={() => onClick(attraction.id)}
-      />
-    ))}
-  </svg>
-)
+import { useNavigate } from 'react-router-dom'
+const ThemeParkSvg = ({ attractions }) => {
+  const navigate = useNavigate()
+
+  const handleAttractionClick = (attraction) => {
+    navigate(`/attractions/${attraction.id}`, {
+      state: { attraction }
+    })
+  }
+
+  if (!attractions) {
+    return null
+  }
+  const svgWidth = 650
+  const svgHeight = 688
+
+  return (
+    <div className="theme-park-svg-container">
+      <svg className="theme-park-svg" width={svgWidth} height={svgHeight}>
+        {attractions.map((attraction) => (
+          <circle
+            key={attraction.id}
+            cx={attraction.x}
+            cy={attraction.y}
+            r={attraction.r}
+            fill="rgba(255, 255, 255, 0)"
+            onClick={() => handleAttractionClick(attraction)}
+          />
+        ))}
+      </svg>
+    </div>
+  )
+}
+
 export default ThemeParkSvg

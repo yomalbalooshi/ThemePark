@@ -17,3 +17,11 @@ export const LoginUser = async (data) => {
     console.log(error)
   }
 }
+
+export const CheckSession = async () => {
+  try {
+    const res = await Client.get('/auth/session')
+  } catch (error) {
+    console.log(error)
+  }
+}

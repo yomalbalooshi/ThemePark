@@ -10,7 +10,7 @@ body {
 .navbar {
   list-style-type: none;
   margin: 0;
-  padding: 20px;
+  padding: 20px 0;
   overflow: hidden;
   background-color: #1f3864;
   color: #fefce6;
@@ -31,40 +31,60 @@ body {
   margin: 0;
   a {
     margin: 0 10px;
-    padding: 0 25px;
   }
 }
 .navbar-logodiv {
   display: inline-flex;
   align-content: center;
   margin: 0;
+  padding: 0 0 0 20px;
 
   p {
     margin: 0;
-    padding: 0;
   }
 }
 
-.zonemap-main-div {
+.zonemap-main-div,
+.zoneattractions-main-div {
   display: flex;
   justify-content: space-between;
 }
-.zonemap-imagecontainer-div {
+.zoneattractions-imagecontainer-div {
   margin: 0;
   width: 675px;
 }
-.zonemap-information-div {
+.zonemap-imagecontainer-div {
+  margin: 0;
+  width: 800px;
+}
+
+.zoneattractions-imagecontainer-div {
+  margin: 0;
+  width: 675px;
+  img {
+    width: 650px;
+  }
+}
+
+.zonemap-information-div,
+.zoneAttractions-information-div {
   padding: 30px;
   color: #1f3864;
 }
-
+.zonepage-attractions-ul {
+  color: #1d262d;
+  a {
+    text-decoration: none;
+    color: #1d262d;
+  }
+}
 .homepage-zone-ul {
   display: grid;
   grid-template-areas: 'zone1 zone2' 'zone3 zone4';
-  color: #3d5786;
+  color: #1d262d;
   a {
     text-decoration: none;
-    color: #3d5786;
+    color: #1d262d;
   }
 }
 .zone1 {
@@ -92,7 +112,6 @@ body {
   display: block;
   width: 90px;
   margin: 0 auto;
-  
 }
 
 .event-card {
@@ -120,4 +139,112 @@ body {
   color: #1f3864;
   font-family: 'Avenir';
   text-align: center;
+}
+.zone-map {
+  z-index: 0;
+}
+
+.theme-park-svg-container {
+  position: absolute;
+  top: 65.5px;
+  width: 650px;
+  height: 688px;
+  z-index: 2;
+}
+.theme-park-svg circle {
+  transition: fill 0.3s ease;
+}
+
+.theme-park-svg circle:hover {
+  fill: rgba(255, 255, 255, 0.3);
+}
+
+.zonesBackButton {
+  background-color: black;
+  color: #fefce6;
+  letter-spacing: 0.8px;
+  font-family: 'Avenir Black', sans-serif;
+  border-radius: 8px;
+  padding: 1px 0px;
+  border: none;
+  cursor: pointer;
+  width: 90px;
+  height: 30px;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.8px;
+}
+
+.zonesBackButton:hover {
+  background-color: rgb(42, 42, 42);
+  color: #fefce6;
+}
+
+/* form style */
+section {
+  border: 2px solid rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+input {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  outline: none; /* Remove default outline */
+  border: 2px solid lightgray; /* Add outline container */
+}
+
+input:focus {
+  border-color: black; /* Change outline color when focused */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-left: 10px;
+  align-items: center;
+}
+
+.button-container > button {
+  margin: 0 10px;
+}
+
+button[type='submit'],
+button[type='button'] {
+  background-color: black;
+  color: #fefce6;
+  font-family: 'Avenir Black', sans-serif;
+
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 90px;
+  height: 30px;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.8px;
+}
+
+button[type='submit']:hover,
+button[type='button']:hover {
+  background-color: rgb(42, 42, 42);
+}
+
+a {
+  text-decoration: none;
 }
