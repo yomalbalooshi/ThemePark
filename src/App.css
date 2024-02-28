@@ -7,6 +7,7 @@ body {
   letter-spacing: 0.8px;
   margin: 0;
 }
+
 .navbar {
   list-style-type: none;
   margin: 0;
@@ -70,7 +71,14 @@ body {
 .zoneAttractions-information-div {
   padding: 30px;
   color: #1f3864;
+  p {
+    font-size: 25px;
+  }
 }
+.zonemap-information-div {
+  padding-top: 10%;
+}
+
 .zonepage-attractions-ul {
   color: #1d262d;
   a {
@@ -135,10 +143,10 @@ body {
   text-align: center;
 }
 
-.description {
+.description,
+p {
   color: #1f3864;
   font-family: 'Avenir';
-  text-align: center;
 }
 .zone-map {
   z-index: 0;
@@ -261,12 +269,14 @@ a {
 
 .attractiondetails-infodiv {
   color: #1f3864;
-
   padding-top: 250px;
   padding-right: 100px;
   max-width: 60%;
   p {
     font-size: 25px;
     font-family: 'Avenir';
+  }
+  h1 {
+    text-align: left;
   }
 }
