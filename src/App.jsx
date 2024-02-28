@@ -12,6 +12,7 @@ import AttractionDetails from './components/AttractionDetails'
 import themeParkData from './data/themeParkData'
 import BuyTicket from './components/BuyTicket'
 import { getZones } from './services/zones'
+import Profile from './components/Profile'
 
 const App = () => {
   const [events, setEvents] = useState(eventsArray)
@@ -43,6 +44,7 @@ const App = () => {
             path="/attractions/:attractionId"
             element={<AttractionDetails />}
           />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </main>
     </div>
