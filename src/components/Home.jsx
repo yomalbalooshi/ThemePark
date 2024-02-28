@@ -2,18 +2,9 @@ import { Link } from 'react-router-dom'
 import Zone from './Zone'
 import ZonesSvg from './ZonesSvg'
 import { useEffect, useState } from 'react'
-import { getZones } from '../services/zones'
 
 const Home = ({ themeParkData }) => {
-  let [zones, setZones] = useState({})
 
-  const allZones = async () => {
-    setZones(await getZones())
-  }
-
-  useEffect(() => {
-    allZones()
-  }, [])
 
   return (
     <div>
