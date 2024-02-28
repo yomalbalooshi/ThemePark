@@ -21,6 +21,7 @@ export const LoginUser = async (data) => {
 export const CheckSession = async () => {
   try {
     const res = await Client.get('/auth/session')
+    return res.data
   } catch (error) {
     console.log(error)
   }

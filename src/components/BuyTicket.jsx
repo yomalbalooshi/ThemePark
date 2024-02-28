@@ -1,23 +1,58 @@
-const BuyTicket = () => {
+import { CreateTicket } from '../services/tickets'
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    
+const BuyTicket = ({ zones }) => {
+  let navigate = useNavigate()
+  const [formValues, setFormValues] = useState({
+    zone: '',
+    ticketType: '',
+    numOfTickets: ''
+  })
+
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.id]: e.target.value })
   }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    await CreateTicket({
+      zone: formValues.zone,
+      ticketType: formValues.ticketType,
+      numOfTickets: formValues.numOfTickets
+    })
+    navigate('/')
+  }
+
   return (
     <section>
       <h1>Buy Ticket</h1>
       <form onSubmit={handleSubmit}>
-        <select>
-          <option selected disabled>
+        <select id="zone" onChange={handleChange}>
+          <option value="0" selected disabled>
             Select a Zone
           </option>
-          <option value="zone1">Zone 1</option>
-          <option value="zone2">Zone 2</option>
-          <option value="zone3">Zone 3</option>
-          <option value="zone4">Zone 4</option>
+          {zones?.map((zone) => (
+            <option key={zone._id} value={zone._id}>
+              {zone.name}
+            </option>
+          ))}
         </select>
-        <input type="number" placeholder="Number of Tickets" />
+        <br />
+        <select id="ticketType" onChange={handleChange}>
+          <option value="0" selected disabled>
+            Select Ticket Type
+          </option>
+          <option value="Normal">Normal</option>
+          <option value="Fast Lane">Fast Lane</option>
+        </select>
+        <br />
+        <input
+          type="number"
+          id="numOfTickets"
+          placeholder="Number of Tickets"
+          onChange={handleChange}
+        />
+        <br />
         <button type="submit">Buy</button>
       </form>
     </section>
