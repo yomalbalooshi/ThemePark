@@ -17,6 +17,11 @@ const App = () => {
   const [user, setUser] = useState(null)
   const [zones, setZones] = useState([])
 
+  const handleLogOut = () => {
+    setUser(null)
+    localStorage.clear()
+  }
+
   useEffect(() => {
     setToken(localStorage.getItem('token'))
     if (token) {
@@ -35,7 +40,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <header>{<Nav user={user} />}</header>
+      <header>{<Nav user={user} handleLogOut={handleLogOut} />}</header>
       <main>
         <Routes>
           {zones && <Route path="/" element={<Home themeParkData={zones} />} />}
@@ -48,7 +53,7 @@ const App = () => {
             path="/attractions/:attractionId"
             element={<AttractionDetails />}
           />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<Profile user={user} />} />
         </Routes>
       </main>
     </div>

@@ -257,9 +257,8 @@ a {
   text-decoration: none;
 }
 
-  .attractiondetails-maindiv {
-    display: flex;
-  }
+.attractiondetails-maindiv {
+  display: flex;
 }
 
 .attractiondetails-container {
@@ -347,5 +346,4 @@ a {
   h1 {
     text-align: left;
   }
-
 }
