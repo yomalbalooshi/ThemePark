@@ -10,6 +10,7 @@ import Register from './components/Register'
 import AttractionDetails from './components/AttractionDetails'
 import BuyTicket from './components/BuyTicket'
 import { getZones } from './services/zones'
+import Profile from './components/Profile'
 
 const App = () => {
   const [token, setToken] = useState('')
@@ -47,6 +48,7 @@ const App = () => {
             path="/attractions/:attractionId"
             element={<AttractionDetails />}
           />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </main>
     </div>
