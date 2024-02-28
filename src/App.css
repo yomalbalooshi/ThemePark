@@ -118,3 +118,24 @@ body {
 .theme-park-svg circle:hover {
   fill: rgba(255, 255, 255, 0.3);
 }
+.attractiondetails-maindiv {
+  display: flex;
+}
+
+.attractiondetails-container {
+  flex: 1; /* This will make the container take up all available horizontal space */
+  display: flex;
+  justify-content: flex-end; /* This will push the attractiondetails-infodiv to the right */
+}
+
+.attractiondetails-infodiv {
+  color: #1f3864;
+
+  padding-top: 250px;
+  padding-right: 100px;
+  max-width: 60%;
+  p {
+    font-size: 25px;
+    font-family: 'Avenir';
+  }
+}
