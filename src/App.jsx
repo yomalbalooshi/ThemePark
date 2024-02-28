@@ -32,7 +32,7 @@ const App = () => {
       <main>
         <Routes>
           {zones && <Route path="/" element={<Home themeParkData={zones} />} />}
-          <Route path="events" element={<Events events={events} />} />
+          <Route path="events" element={<Events />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/zone/:_id" element={<Zone themeParkData={zones} />} />
