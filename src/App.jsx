@@ -7,13 +7,11 @@ import Nav from './components/Nav'
 import Events from './components/Events'
 import Login from './components/Login'
 import Register from './components/Register'
-import eventsArray from './data/events'
 import AttractionDetails from './components/AttractionDetails'
 import BuyTicket from './components/BuyTicket'
 import { getZones } from './services/zones'
 
 const App = () => {
-  const [events, setEvents] = useState(eventsArray)
   const [zones, setZones] = useState([])
 
   useEffect(() => {
