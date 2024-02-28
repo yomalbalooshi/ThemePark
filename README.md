@@ -26,7 +26,7 @@ Escape to the tranquil paradise of Tropical Tides, a serene zone offering relaxa
 
 ## Attractions
 
-Each zone boasts a variety of attractions, ranging from heart-pounding roller coasters to enchanting shows and interactive experiences. Discover the magic and excitement waiting for you in every corner of YTE Theme Park.
+Each zone boasts a variety of attractions, ranging from heart-pounding roller coasters to enchanting shows and interactive experiences. Discover the magic and excitement waiting for you in every corner of YTE Land.
 
 ## Tickets
 
