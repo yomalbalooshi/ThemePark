@@ -24,7 +24,7 @@ const Zone = ({ themeParkData }) => {
           <img
             className="zone-map"
             width="650px"
-            src="/images/pink-0.png"
+            src={themeParkDetails.image}
             alt="theme park map"
           />
         </div>

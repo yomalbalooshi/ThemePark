@@ -18,12 +18,31 @@ const AttractionDetails = () => {
     }
   }, [attractionId, attraction])
   return attractionDetails ? (
-    <div>
-      <h1>attraction details</h1>
-      <p>{attractionDetails.name}</p>
-      <button className="zonesBackButton" onClick={() => backButtonOnClick()}>
-        Back
-      </button>
+    <div
+      style={{
+        backgroundImage: `url(${attractionDetails.image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        width: '100%',
+        height: '100vh'
+      }}
+    >
+      <div className="attractiondetails-maindiv">
+        <div className="attractiondetails-container">
+          <div className="attractiondetails-infodiv">
+            <h1 className="attractiondetails-name">{attractionDetails.name}</h1>
+            <p className="attractiondetails-paragraph">
+              {attractionDetails.description}
+            </p>
+            <button
+              className="zonesBackButton"
+              onClick={() => backButtonOnClick()}
+            >
+              Back
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   ) : (
     'no attraction found :('
