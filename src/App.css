@@ -125,7 +125,7 @@ body {
 .event-card {
   padding: 1em;
   width: 18em;
-  height: 20em;
+  height: 22em;
   background-color: rgb(255, 255, 255);
   border-radius: 1.5em;
   margin: 1em;
@@ -196,7 +196,7 @@ section {
 }
 
 h1 {
-  text-align: center;
+  text-align: left;
 }
 
 form {
