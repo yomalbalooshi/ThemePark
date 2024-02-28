@@ -15,13 +15,13 @@ import { getZones } from './services/zones'
 
 const App = () => {
   const [events, setEvents] = useState(eventsArray)
-  let [zones, setZones] = useState({})
-
-  const allZones = async () => {
-    setZones(await getZones())
-  }
+  const [zones, setZones] = useState([])
 
   useEffect(() => {
+    const allZones = async () => {
+      let data = await getZones()
+      setZones(data)
+    }
     allZones()
   }, [])
 

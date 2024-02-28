@@ -4,8 +4,6 @@ import ZonesSvg from './ZonesSvg'
 import { useEffect, useState } from 'react'
 
 const Home = ({ themeParkData }) => {
-
-
   return (
     <div>
       <div className="zonemap-main-div">
