@@ -1,13 +1,15 @@
 import { NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { CheckSession } from '../services/auth'
-const Nav = ({ user }) => {
+const Nav = ({ user, handleLogOut }) => {
   const userLinks = (
     <div className="navbar-othersdiv">
       <NavLink to="events">Events</NavLink>
       <NavLink to="/ticket">Buy Ticket</NavLink>
       <NavLink to="/profile">Profile</NavLink>
-      <NavLink to="/logout">Logout</NavLink>
+      <NavLink to="/" onClick={handleLogOut}>
+        Logout
+      </NavLink>
     </div>
   )
 
