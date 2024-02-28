@@ -7,14 +7,12 @@ import Nav from './components/Nav'
 import Events from './components/Events'
 import Login from './components/Login'
 import Register from './components/Register'
-import eventsArray from './data/events'
 import AttractionDetails from './components/AttractionDetails'
 import themeParkData from './data/themeParkData'
 import BuyTicket from './components/BuyTicket'
 import { getZones } from './services/zones'
 
 const App = () => {
-  const [events, setEvents] = useState(eventsArray)
   const [zones, setZones] = useState([])
 
   useEffect(() => {
@@ -31,7 +29,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home themeParkData={themeParkData} />} />
-          <Route path="events" element={<Events events={events} />} />
+          <Route path="events" element={<Events />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route
