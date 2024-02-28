@@ -25,10 +25,8 @@ const Home = ({ themeParkData }) => {
           <ul className="homepage-zone-ul">
             <div>
               {themeParkData.map((themePark) => (
-                <li className="homepage-zone-li" key={themePark.mapId}>
-                  <Link to={`zone/${themePark.mapId}`}>
-                    {themePark.mapName}
-                  </Link>
+                <li className="homepage-zone-li" key={themePark._id}>
+                  <Link to={`zone/${themePark._id}`}>{themePark.name}</Link>
                 </li>
               ))}
             </div>
