@@ -53,7 +53,7 @@ const App = () => {
             path="/attractions/:attractionId"
             element={<AttractionDetails />}
           />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<Profile user={user} />} />
         </Routes>
       </main>
     </div>
