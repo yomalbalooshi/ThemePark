@@ -13,22 +13,21 @@ import { getZones } from './services/zones'
 
 const App = () => {
   const [zones, setZones] = useState([])
+  const [token, setToken] = useState('')
 
   useEffect(() => {
+    setToken(localStorage.getItem('token'))
+
     const allZones = async () => {
       let data = await getZones()
       setZones(data)
     }
     allZones()
   }, [])
-  console.log('zones')
-
-  console.log(zones)
-  console.log('zones')
 
   return (
     <div className="App">
-      <header>{<Nav />}</header>
+      <header>{<Nav token={token} />}</header>
       <main>
         <Routes>
           {zones && <Route path="/" element={<Home themeParkData={zones} />} />}
