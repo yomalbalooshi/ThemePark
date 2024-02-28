@@ -37,6 +37,8 @@ const Zone = ({ themeParkData }) => {
         <p className="zoneAttractions-information-paragraph">
           {themeParkDetails.description}
         </p>
+        <p>opening time: {themeParkDetails.openingTime}</p>
+        <p>closing time: {themeParkDetails.closingTime}</p>
         <div>
           {themeParkDetails && themeParkDetails.attractions && (
             <ul className="zonepage-attractions-ul">
