@@ -1,20 +1,17 @@
 import { NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { CheckSession } from '../services/auth'
-const Nav = () => {
+const Nav = ({ token }) => {
   const [user, setUser] = useState(null)
 
-  const checkToken = async () => {
-    const user = await CheckSession()
-    setUser(user)
-  }
-
   useEffect(() => {
-    const token = localStorage.getItem('token')
     if (token) {
+      const checkToken = async () => {
+        setUser(await CheckSession())
+      }
       checkToken()
     }
-  }, [])
+  }, [token])
 
   return (
     <nav className="navbar">
