@@ -196,7 +196,7 @@ section {
 }
 
 h1 {
-  text-align: left;
+  text-align: center;
 }
 
 form {
@@ -275,6 +275,9 @@ a {
   p {
     font-size: 25px;
     font-family: 'Avenir';
+  }
+  h1 {
+    text-align: left;
   }
 }
 
