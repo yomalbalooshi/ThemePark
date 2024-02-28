@@ -58,9 +58,10 @@ const Home = () => {
           </ul>
         </div>
       </div>
-      {themeParkData.map((themePark) => (
+      {/* {themeParkData.map((themePark) => (
         <Zone key={themePark.parkName} {...themePark} />
-      ))}
+      ))} */}
+     
     </div>
   )
 }

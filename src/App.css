@@ -79,3 +79,45 @@ body {
 .zone4 {
   grid-area: zone3;
 }
+
+.event-grid {
+  padding-top: 5em;
+  padding-bottom: 5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.listing-img {
+  display: block;
+  width: 90px;
+  margin: 0 auto;
+  
+}
+
+.event-card {
+  padding: 1em;
+  width: 18em;
+  height: 20em;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1.5em;
+  margin: 1em;
+  justify-content: space-around;
+  /* box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.527); */
+  color: white;
+  font-family: 'Georgia';
+  cursor: pointer;
+  border: 2px solid #1f3864;
+}
+
+.name {
+  color: #1f3864;
+  font-family: 'Avenir Black';
+  text-align: center;
+}
+
+.description {
+  color: #1f3864;
+  font-family: 'Avenir';
+  text-align: center;
+}
