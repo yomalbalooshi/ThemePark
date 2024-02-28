@@ -3,7 +3,7 @@ import Client from './api'
 export const CreateTicket = async (data) => {
   try {
     const res = Client.post('/tickets', data)
-    console.log(res)
+    return res.data
   } catch (error) {
     console.log(error)
   }
