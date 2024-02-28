@@ -43,10 +43,12 @@ const Login = () => {
           onChange={handleChange}
           required
         />
+       <div class="button-container">
         <button type="submit">Login</button>
         <Link to="/register">
           <button type="button">Register</button>
         </Link>
+        </div>
       </form>
     </section>
   )

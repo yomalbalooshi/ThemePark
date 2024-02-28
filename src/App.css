@@ -100,6 +100,46 @@ body {
   grid-area: zone3;
 }
 
+.event-grid {
+  padding-top: 5em;
+  padding-bottom: 5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.listing-img {
+  display: block;
+  width: 90px;
+  margin: 0 auto;
+}
+
+.event-card {
+  padding: 1em;
+  width: 18em;
+  height: 20em;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1.5em;
+  margin: 1em;
+  justify-content: space-around;
+  /* box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.527); */
+  color: white;
+  font-family: 'Georgia';
+  cursor: pointer;
+  border: 2px solid #1f3864;
+}
+
+.name {
+  color: #1f3864;
+  font-family: 'Avenir Black';
+  text-align: center;
+}
+
+.description {
+  color: #1f3864;
+  font-family: 'Avenir';
+  text-align: center;
+}
 .zone-map {
   z-index: 0;
 }
@@ -118,6 +158,97 @@ body {
 .theme-park-svg circle:hover {
   fill: rgba(255, 255, 255, 0.3);
 }
+
+
+.zonesBackButton {
+  background-color: black;
+  color: #fefce6;
+  letter-spacing: 0.8px;
+  font-family: 'Avenir Black', sans-serif;
+  border-radius: 8px;
+  padding: 1px 0px;
+  border: none;
+  cursor: pointer;
+  width: 90px;
+  height: 30px;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.8px;
+}
+
+.zonesBackButton:hover {
+  background-color: rgb(42, 42, 42);
+  color: #fefce6;
+}
+
+/* form style */
+section {
+  border: 2px solid rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+input {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  outline: none; /* Remove default outline */
+  border: 2px solid lightgray; /* Add outline container */
+}
+
+input:focus {
+  border-color: black; /* Change outline color when focused */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-left: 10px;
+  align-items: center;
+}
+
+.button-container > button {
+  margin: 0 10px;
+}
+
+button[type='submit'],
+button[type='button'] {
+  background-color: black;
+  color: #fefce6;
+  font-family: 'Avenir Black', sans-serif;
+
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 90px;
+  height: 30px;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.8px;
+}
+
+button[type='submit']:hover,
+button[type='button']:hover {
+  background-color: rgb(42, 42, 42);
+}
+
+a {
+  text-decoration: none;
+
 .attractiondetails-maindiv {
   display: flex;
 }
@@ -138,4 +269,5 @@ body {
     font-size: 25px;
     font-family: 'Avenir';
   }
+
 }
