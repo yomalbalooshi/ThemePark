@@ -3,7 +3,7 @@ const ThemeParkSvg = ({ attractions }) => {
   const navigate = useNavigate()
 
   const handleAttractionClick = (attraction) => {
-    navigate(`/attractions/${attraction.id}`, {
+    navigate(`/attractions/${attraction._id}`, {
       state: { attraction }
     })
   }
@@ -19,7 +19,7 @@ const ThemeParkSvg = ({ attractions }) => {
       <svg className="theme-park-svg" width={svgWidth} height={svgHeight}>
         {attractions.map((attraction) => (
           <circle
-            key={attraction.id}
+            key={attraction._id}
             cx={attraction.x}
             cy={attraction.y}
             r={attraction.r}

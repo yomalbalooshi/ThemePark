@@ -3,7 +3,7 @@ const ZonesSvg = ({ zones }) => {
   const navigate = useNavigate()
 
   const handleZoneClick = (zone) => {
-    navigate(`/zone/${zone.mapId}`, {
+    navigate(`/zone/${zone._id}`, {
       state: { zone }
     })
   }
@@ -13,13 +13,12 @@ const ZonesSvg = ({ zones }) => {
   }
   const svgWidth = 800
   const svgHeight = 800
-  console.log(`zones:${zones[0].mapId}`)
   return (
     <div className="theme-park-svg-container">
       <svg className="theme-park-svg" width={svgWidth} height={svgHeight}>
         {zones.map((zone) => (
           <circle
-            key={zone.mapId}
+            key={zone._id}
             cx={zone.x}
             cy={zone.y}
             r={zone.r}
